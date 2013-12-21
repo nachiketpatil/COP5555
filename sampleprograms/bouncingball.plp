@@ -1,0 +1,275 @@
+bouncingballs {
+image disp;
+image img1;
+image img2;
+image img3;
+image img4;
+image img5;
+
+int x1;
+int y1;
+int incx1;
+int incy1;
+int travelx1;
+int travely1;
+
+
+int x2;
+int y2;
+int incx2;
+int incy2;
+int travelx2;
+int travely2;
+
+
+int x3;
+int y3;
+int incx3;
+int incy3;
+int travelx3;
+int travely3;
+
+
+int x4;
+int y4;
+int incx4;
+int incy4;
+int travelx4;
+int travely4;
+
+
+int x5;
+int y5;
+int incx5;
+int incy5;
+int travelx5;
+int travely5;
+
+disp.shape = [500, 500];
+img1.shape = [500, 500];
+img2.shape = [500, 500];
+img3.shape = [500, 500];
+img4.shape = [500, 500];
+img5.shape = [500, 500];
+
+x1 = 250;
+y1 = 250;
+incx1 = 1;
+incy1 = 1;
+travelx1 = 10;
+travely1 = 20;
+
+x2 = 250;
+y2 = 250;
+incx2 = 0;
+incy2 = 0;
+travelx2 = 30;
+travely2 = 10;
+
+x3 = 250;
+y3 = 250;
+incx3 = 0;
+incy3 = 1;
+travelx3 = 25;
+travely3 = 15;
+
+x4 = 250;
+y4 = 250;
+incx4 = 1;
+incy4 = 0;
+travelx4 = 20;
+travely4 = 20;
+
+x5 = 250;
+y5 = 250;
+incx5 = 1;
+incy5 = 1;
+travelx5 = 15;
+travely5 = 5;
+
+while(true) {
+	// ball 1
+	img1 = {{ ((x-x1)*(x-x1) + (y-y1)*(y-y1)) < 100 ? Z : 0,
+			 ((x-x1)*(x-x1) + (y-y1)*(y-y1)) < 100 ? Z : 0,
+			 ((x-x1)*(x-x1) + (y-y1)*(y-y1)) < 100 ? Z : 0}};
+			 if(incx1 > 0) {
+			 	x1 = x1 + travelx1;
+			 } else {
+			 	x1 = x1 - travelx1;
+			 }
+			 if(incy1 > 0) {
+			  	y1 = y1 + travely1;
+			 } else {
+			 	y1 = y1 - travely1;
+			 }
+			 if(x1 > 495) {
+				x1 = 494;
+				incx1 = 0;
+				travelx1 = (travelx1 + 7)% 19;
+			 }
+			 if(x1 < 5) {
+			 	x1 = 6;
+			 	incx1 = 1;
+			 	travelx1 = (travelx1 + 13)% 19;
+			 }
+			 if(y1<5) {
+			 	y1 = 6;
+			 	incy1 = 1;
+			 	travely1 = (travely1 + 7)% 19;
+			 }
+			 if (y1 > 495) {
+				y1 = 494;
+				incy1 = 0;
+				travely1 = (travely1 + 13)% 19;
+			 }
+	
+	// ball 2			 
+	img2 = {{ ((x-x2)*(x-x2) + (y-y2)*(y-y2)) < 36 ? Z : 0,
+			 0,
+			 0}};
+			 if(incx2 > 0) {
+			 	x2 = x2 + travelx2;
+			 } else {
+			 	x2 = x2 - travelx2;
+			 }
+			 if(incy2 > 0) {
+			  	y2 = y2 + travely2;
+			 } else {
+			 	y2 = y2 - travely2;
+			 }
+			 if(x2 > 495) {
+				x2 = 494;
+				incx2 = 0;
+				travelx2 = (travelx2 + 7)% 19;
+			 }
+			 if(x2 < 5) {
+			 	x2 = 6;
+			 	incx2 = 1;
+			 	travelx2 = (travelx2 + 13)% 19;
+			 }
+			 if(y2<5) {
+			 	y2 = 6;
+			 	incy2 = 1;
+			 	travely2 = (travely2 + 7)% 19;
+			 }
+			 if (y2 > 495) {
+				y2 = 494;
+				incy2 = 0;
+				travely2 = (travely2 + 13)% 19;
+			 }
+			 
+	// ball 3
+	img3 = {{ ((x-x3)*(x-x3) + (y-y3)*(y-y3)) < 49 ? Z : 0,
+			 ((x-x3)*(x-x3) + (y-y3)*(y-y3)) < 49 ? Z : 0,
+			 0}};
+			 if(incx3 > 0) {
+			 	x3 = x3 + travelx3;
+			 } else {
+			 	x3 = x3 - travelx3;
+			 }
+			 if(incy3 > 0) {
+			  	y3 = y3 + travely3;
+			 } else {
+			 	y3 = y3 - travely3;
+			 }
+			 if(x3 > 495) {
+				x3 = 494;
+				incx3 = 0;
+				travelx3 = (travelx3 + 7)% 19;
+			 }
+			 if(x3 < 5) {
+			 	x3 = 6;
+			 	incx3 = 1;
+			 	travelx3 = (travelx3 + 13)% 19;
+			 }
+			 if(y3 < 5) {
+			 	y3 = 6;
+			 	incy3 = 1;
+			 	travely3 = (travely3 + 9)% 19;
+			 }
+			 if (y3 > 495) {
+				y3 = 494;
+				incy3 = 0;
+				travely3 = (travely3 + 13)% 19;
+			 }
+			 
+	// ball 4
+	img4 = {{ 0,
+			 ((x-x4)*(x-x4) + (y-y4)*(y-y4)) < 49 ? Z : 0,
+			 0}};
+			 if(incx4 > 0) {
+			 	x4 = x4 + travelx4;
+			 } else {
+			 	x4 = x4 - travelx4;
+			 }
+			 if(incy4 > 0) {
+			  	y4 = y4 + travely4;
+			 } else {
+			 	y4 = y4 - travely4;
+			 }
+			 if(x4 > 495) {
+				x4 = 494;
+				incx4 = 0;
+				travelx4 = (travelx4 + 7)% 19;
+			 }
+			 if(x4 < 5) {
+			 	x4 = 6;
+			 	incx4 = 1;
+			 	travelx4 = (travelx4 + 13)% 19;
+			 }
+			 if(y4<5) {
+			 	y4 = 6;
+			 	incy4 = 1;
+			 	travely4 = (travely4 + 7)% 19;
+			 }
+			 if (y4 > 495) {
+				y4 = 494;
+				incy4 = 0;
+				travely4 = (travely4 + 13)% 19;
+			 }
+			 
+			 
+	// ball 5
+	img5 = {{ 0,
+			 ((x-x5)*(x-x5) + (y-y5)*(y-y5)) < 49 ? Z : 0,
+			 ((x-x5)*(x-x5) + (y-y5)*(y-y5)) < 49 ? Z : 0}};
+			 if(incx5 > 0) {
+			 	x5 = x5 + travelx5;
+			 } else {
+			 	x5 = x5 - travelx5;
+			 }
+			 if(incy5 > 0) {
+			  	y5 = y5 + travely5;
+			 } else {
+			 	y5 = y5 - travely5;
+			 }
+			 if(x5 > 495) {
+				x5 = 494;
+				incx5 = 0;
+				travelx5 = (travelx5 + 7)% 19;
+			 }
+			 if(x5 < 5) {
+			 	x5 = 6;
+			 	incx5 = 1;
+			 	travelx5 = (travelx5 + 13)% 19;
+			 }
+			 if(y5<5) {
+			 	y5 = 6;
+			 	incy5 = 1;
+			 	travely5 = (travely5 + 7)% 19;
+			 }
+			 if (y5 > 495) {
+				y5 = 494;
+				incy5 = 0;
+				travely5 = (travely5 + 13)% 19;
+			 }			 
+
+	disp = {{ (img1[x,y]red + img2[x,y]red + img3[x,y]red + img4[x,y]red + img5[x,y]red) % 256, 
+			  (img1[x,y]green + img2[x,y]green + img3[x,y]green + img4[x,y]green + img5[x,y]green) % 256,
+			  (img1[x,y]blue + img2[x,y]blue + img3[x,y]blue +img4[x,y]blue + img5[x,y]blue) % 256
+			}};
+		disp.visible = true;
+
+		pause 1;
+}
+}

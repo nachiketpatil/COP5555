@@ -1,0 +1,28 @@
+greyscale {
+
+image img;
+image disp;
+
+img = "http://www.cise.ufl.edu/news/NA00166/image.png";
+
+img.visible = true;
+
+pause 2000;
+img.visible = false;
+
+disp.shape = [img.width, img.height];
+
+// This is for lighter grey
+//disp = {{ (((img[x,y]red < img[x,y]green) ? img[x,y]red : img[x,y]green) < img[x,y]blue) ? ((img[x,y]red < img[x,y]green) ? img[x,y]red : img[x,y]green) : img[x,y]blue,
+//		  (((img[x,y]red < img[x,y]green) ? img[x,y]red : img[x,y]green) < img[x,y]blue) ? ((img[x,y]red < img[x,y]green) ? img[x,y]red : img[x,y]green) : img[x,y]blue,
+//		  (((img[x,y]red < img[x,y]green) ? img[x,y]red : img[x,y]green) < img[x,y]blue) ? ((img[x,y]red < img[x,y]green) ? img[x,y]red : img[x,y]green) : img[x,y]blue 
+//		}};
+
+	disp = {{ (img[x,y]red + img[x,y]green + img[x,y]blue)/3,
+			  (img[x,y]red + img[x,y]green + img[x,y]blue)/3,
+			  (img[x,y]red + img[x,y]green + img[x,y]blue)/3
+			}};
+
+		disp.visible = true;
+
+}
